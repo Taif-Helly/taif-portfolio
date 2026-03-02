@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -13,7 +14,8 @@ export default function Contact() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
   }
 
-  function onSubmit(e) {
+  // ✅ EN onSubmit, och den är async
+  async function onSubmit(e) {
     e.preventDefault();
 
     const name = form.name.trim();
@@ -21,21 +23,36 @@ export default function Contact() {
     const message = form.message.trim();
 
     if (!name || !email || !message) {
-      setStatus({ type: "error", text: "Fyll i namn, email och meddelande." });
+      setStatus({ type: "error", text: "Fill in your name, email and message." });
       return;
     }
     if (!validEmail(email)) {
-      setStatus({ type: "error", text: "Skriv en giltig emailadress." });
+      setStatus({ type: "error", text: "Please enter a valid email address." });
       return;
     }
 
-    setStatus({ type: "success", text: "Tack! Jag öppnar ditt mailprogram." });
+    // (valfritt) visar att den skickar
+    setStatus({ type: "loading", text: "Sending..." });
 
-    // Byt till din riktiga mailadress:
-    const to = "taif.helly@example.com";
-    const subject = encodeURIComponent(`Kontakt via portfolio – ${name}`);
-    const body = encodeURIComponent(`Namn: ${name}\nEmail: ${email}\n\n${message}\n`);
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    try {
+      const res = await emailjs.send(
+        "service_pth7fah",
+        "template_i4679hp",
+        { name, email, message },
+        "WZvH73k1NP7uPY4_q"
+      );
+
+      console.log("EmailJS OK:", res);
+
+      setStatus({
+        type: "success",
+        text: "Thank you for your email! I'll get back to you shortly.",
+      });
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS ERROR:", error);
+      setStatus({ type: "error", text: "Something went wrong. Please try again." });
+    }
   }
 
   return (
