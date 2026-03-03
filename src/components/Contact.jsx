@@ -14,7 +14,7 @@ export default function Contact() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
   }
 
-  // ✅ EN onSubmit, och den är async
+
   async function onSubmit(e) {
     e.preventDefault();
 
