@@ -10,22 +10,20 @@ export default function Resume() {
       transition={{ duration: 0.3 }}
     >
       <h2>Resume</h2>
-      <p>
-        PDF ligger i <code>public/Taif-Helly-Resume.pdf</code>.
-      </p>
+     
 
       <div className="pdf-wrap">
         <iframe
           title="Resume PDF"
-          src="/Taif-Helly-Resume.pdf"
+          src="/CV-Taif Helly.pdf"
           className="pdf"
         />
       </div>
 
       <p>
-        Om iframe inte funkar:{" "}
-        <a href="/Taif-Helly-Resume.pdf" target="_blank" rel="noreferrer">
-          öppna PDF i ny flik
+        If the resume is not loading on the screen:{" "}
+        <a href="/CV-Taif Helly.pdf" target="_blank" rel="noreferrer">
+          Open PDF in a new tab
         </a>
       </p>
 
