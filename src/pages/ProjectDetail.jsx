@@ -1,11 +1,25 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { projectsData } from "../data/projectsData";
 
 export default function ProjectDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
     const project = projectsData.find(p => p.id === parseInt(id));
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const handlePrevImage = () => {
+        setCurrentImageIndex((prev) => 
+            prev === 0 ? project.images.length - 1 : prev - 1
+        );
+    };
+
+    const handleNextImage = () => {
+        setCurrentImageIndex((prev) => 
+            prev === project.images.length - 1 ? 0 : prev + 1
+        );
+    };
 
     if (!project) {
         return (
@@ -37,8 +51,50 @@ export default function ProjectDetail() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.3 }}
             >
-                <div className="detail-image">
-                    <img src={project.image} alt={project.title} />
+                <div className="detail-image-gallery">
+                    <div className="main-image-wrapper">
+                        <motion.img 
+                            key={currentImageIndex}
+                            src={project.images[currentImageIndex]} 
+                            alt={`${project.title} - bild ${currentImageIndex + 1}`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.3 }}
+                        />
+                        {project.images.length > 1 && (
+                            <>
+                                <button 
+                                    className="gallery-nav prev" 
+                                    onClick={handlePrevImage}
+                                    aria-label="Föregående bild"
+                                >
+                                    ❮
+                                </button>
+                                <button 
+                                    className="gallery-nav next" 
+                                    onClick={handleNextImage}
+                                    aria-label="Nästa bild"
+                                >
+                                    ❯
+                                </button>
+                            </>
+                        )}
+                    </div>
+
+                    {project.images.length > 1 && (
+                        <div className="gallery-thumbnails">
+                            {project.images.map((img, idx) => (
+                                <button
+                                    key={idx}
+                                    className={`thumbnail ${idx === currentImageIndex ? "active" : ""}`}
+                                    onClick={() => setCurrentImageIndex(idx)}
+                                    aria-label={`Se bild ${idx + 1}`}
+                                >
+                                    <img src={img} alt={`Miniatyr ${idx + 1}`} />
+                                </button>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 <div className="detail-content">

@@ -26,7 +26,7 @@ export default function Projects() {
                         >
                             <div className="project-image-wrapper">
                                 <img
-                                    src={project.image}
+                                    src={project.images[0]}
                                     alt={project.title}
                                     className="project-img"
                                 />
