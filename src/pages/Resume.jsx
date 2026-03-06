@@ -20,18 +20,18 @@ export default function Resume() {
         />
       </div>
 
-      <p>
-        If the resume is not loading on the screen:{" "}
-        <a href="/CV-Taif Helly.pdf" target="_blank" rel="noreferrer">
-          Open PDF in a new tab
+      <div className="resume-actions">
+        <p className="resume-info">If the resume is not loading on the screen:</p>
+        <a href="/CV-Taif Helly.pdf" target="_blank" rel="noreferrer" className="proj-btn live">
+          Open new tab
         </a>
-      </p>
+      </div>
 
-      <p style={{ marginTop: 18 }}>
+      <div className="back-link">
         <Link className="nav-link" to="/">
           ← Back to Home
         </Link>
-      </p>
+      </div>
     </motion.main>
   );
 }
