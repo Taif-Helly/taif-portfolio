@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projectsData } from "../data/projectsData";
 
 export default function ProjectDetail() {
@@ -8,6 +8,7 @@ export default function ProjectDetail() {
     const navigate = useNavigate();
     const project = projectsData.find(p => p.id === parseInt(id));
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
 
     const handlePrevImage = () => {
         setCurrentImageIndex((prev) => 
@@ -20,6 +21,23 @@ export default function ProjectDetail() {
             prev === project.images.length - 1 ? 0 : prev + 1
         );
     };
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (!lightboxOpen) return;
+            
+            if (e.key === "Escape") {
+                setLightboxOpen(false);
+            } else if (e.key === "ArrowLeft") {
+                handlePrevImage();
+            } else if (e.key === "ArrowRight") {
+                handleNextImage();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [lightboxOpen, project]);
 
     if (!project) {
         return (
@@ -60,6 +78,8 @@ export default function ProjectDetail() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.3 }}
+                            onClick={() => setLightboxOpen(true)}
+                            style={{ cursor: "pointer" }}
                         />
                         {project.images.length > 1 && (
                             <>
@@ -87,7 +107,10 @@ export default function ProjectDetail() {
                                 <button
                                     key={idx}
                                     className={`thumbnail ${idx === currentImageIndex ? "active" : ""}`}
-                                    onClick={() => setCurrentImageIndex(idx)}
+                                    onClick={() => {
+                                        setCurrentImageIndex(idx);
+                                        setLightboxOpen(true);
+                                    }}
                                     aria-label={`Se bild ${idx + 1}`}
                                 >
                                     <img src={img} alt={`Miniatyr ${idx + 1}`} />
@@ -128,6 +151,44 @@ export default function ProjectDetail() {
                     </div>
                 </div>
             </motion.div>
+
+            {lightboxOpen && (
+                <div className="lightbox" onClick={() => setLightboxOpen(false)}>
+                    <motion.img
+                        src={project.images[currentImageIndex]}
+                        alt={`${project.title} - Fullskärm`}
+                        className="lightbox-img"
+                        onClick={(e) => e.stopPropagation()}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                    />
+                    {project.images.length > 1 && (
+                        <>
+                            <button 
+                                className="lightbox-nav prev" 
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handlePrevImage();
+                                }}
+                                aria-label="Föregående bild"
+                            >
+                                ❮
+                            </button>
+                            <button 
+                                className="lightbox-nav next" 
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleNextImage();
+                                }}
+                                aria-label="Nästa bild"
+                            >
+                                ❯
+                            </button>
+                        </>
+                    )}
+                </div>
+            )}
         </motion.main>
     );
 }
