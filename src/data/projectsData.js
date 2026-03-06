@@ -5,7 +5,32 @@ import answer from "../assets/ProjectsPictures/answer.png";
 import codeAndGame from "../assets/ProjectsPictures/coding & gaming.png";
 import mainblogg from "../assets/ProjectsPictures/mainblogg.png";
 import webfunctions from "../assets/ProjectsPictures/functions.png";
+import mainpok from "../assets/ProjectsPictures/main-pokemon.png";
+import charizard from "../assets/ProjectsPictures/charizard.png";
+import mainprod from "../assets/ProjectsPictures/main-prod.png";
+import loginprod from "../assets/ProjectsPictures/log in-prod.png";
 export const projectsData = [
+     {
+        id: 5,
+        title: "Productivity Assistant Application",
+        shortDescription: "A streamlined productivity app to track habits, tasks, and events with local storage authentication.",
+        longDescription: "This project is a productivity tracking web application where users can manage events, create to-do lists, and track daily habits. It includes a simple login system using local storage and provides an organized interface to help users stay productive and manage their tasks efficiently.",
+        images: [mainprod,loginprod ],
+        github: "https://github.com/Taif-Helly/Productivity-Assistant-Application-",
+        demo: "#",
+        tags: ["React", "HTML", "CSS", "JavaScript"],
+    },
+
+     {
+        id: 4,
+        title: "Pokémon application",
+        shortDescription: "This project is a web application that fetches data from a Pokémon API to display information about different Pokémon, including their types and abilities.",
+        longDescription: "This project is a web application that fetches data from a Pokémon API to display information about different Pokémon, including their types, abilities, and strengths. The website allows users to explore and learn more about various Pokémon through dynamically loaded data and a simple, user friendly interface.",
+        images: [mainpok,charizard ],
+        github: "https://github.com/Taif-Helly/Pokemon-application",
+        demo: "#",
+        tags: ["React", "HTML", "CSS", "JavaScript"],
+    },
      {
         id: 3,
         title: "Dynamic Blogging Platform Tender Bites",

@@ -28,7 +28,7 @@ export default function ProjectDetail() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
             >
-                <h2>Projekt inte hittat</h2>
+                <h2>Didn't find the project</h2>
                 <Link to="/projects" className="btn">Tillbaka till projekt</Link>
             </motion.div>
         );
@@ -42,7 +42,7 @@ export default function ProjectDetail() {
             transition={{ duration: 0.3 }}
         >
             <button onClick={() => navigate(-1)} className="btn back-btn">
-                ← Tillbaka
+                ← Go back
             </button>
 
             <motion.div
