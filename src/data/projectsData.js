@@ -1,14 +1,14 @@
-import firstImg from "../assets/ProjectsPictures/first.png";
-import main from "../assets/ProjectsPictures/main.png";
-import retake from "../assets/ProjectsPictures/retake.png";
-import answer from "../assets/ProjectsPictures/answer.png";
-import codeAndGame from "../assets/ProjectsPictures/coding & gaming.png";
-import mainblogg from "../assets/ProjectsPictures/mainblogg.png";
-import webfunctions from "../assets/ProjectsPictures/functions.png";
-import mainpok from "../assets/ProjectsPictures/main-pokemon.png";
-import charizard from "../assets/ProjectsPictures/charizard.png";
-import mainprod from "../assets/ProjectsPictures/main-prod.png";
-import loginprod from "../assets/ProjectsPictures/log in-prod.png";
+import firstImg from "../assets/ProjectsPictures/first.PNG";
+import main from "../assets/ProjectsPictures/main.PNG";
+import retake from "../assets/ProjectsPictures/retake.PNG";
+import answer from "../assets/ProjectsPictures/answer.PNG";
+import codeAndGame from "../assets/ProjectsPictures/coding & gaming.PNG";
+import mainblogg from "../assets/ProjectsPictures/mainblogg.PNG";
+import webfunctions from "../assets/ProjectsPictures/functions.PNG";
+import mainpok from "../assets/ProjectsPictures/main-pokemon.PNG";
+import charizard from "../assets/ProjectsPictures/charizard.PNG";
+import mainprod from "../assets/ProjectsPictures/main-prod.PNG";
+import loginprod from "../assets/ProjectsPictures/log in-prod.PNG";
 export const projectsData = [
      {
         id: 5,

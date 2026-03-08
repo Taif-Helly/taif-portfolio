@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import profileImg from "../assets/profile.png";
+import profileImg from "../assets/profile.PNG";
 
 export default function Hero() {
     const navigate = useNavigate();
