@@ -46,9 +46,9 @@ export const projectsData = [
         title: "Interaktiv-och-Dynamisk-Quizapplikation",
         shortDescription: "A web-based quiz platform where users can test their knowledge through interactive and engaging quizzes across different topics.",
         longDescription: "This project is a web-based quiz application designed to provide an interactive and engaging way for users to test their knowledge. The website presents a series of questions across different topics and allows users to select answers, receive feedback, and view their results. The goal of the project was to create a clean, responsive, and user-friendly interface while focusing on functionality and user experience.",
-        images: [main,codeAndGame, answer, retake, ],
+        images: [main,codeAndGame, answer, retake],
         github: "https://github.com/Taif-Helly/Interaktiv-och-Dynamisk-Quizapplikation",
-        demo: "#",
+        demo: "https://quiz-application-code.netlify.app/",
         tags: ["HTML", "CSS", "JavaScript Vanilla"],
     },
     {
