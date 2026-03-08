@@ -1,4 +1,4 @@
-import firstImg from "../assets/ProjectsPictures/first.PNG";
+import firstImg from "../assets/ProjectsPictures/first.png";
 import main from "../assets/ProjectsPictures/main.PNG";
 import retake from "../assets/ProjectsPictures/retake.PNG";
 import answer from "../assets/ProjectsPictures/answer.PNG";
