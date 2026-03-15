@@ -22,7 +22,11 @@ export default function Navbar() {
     <header>
       <div className="upper-bar">
         <nav>
-          <ul className="nav-links">
+          <div className="nav-container">
+            <div className="logo-nav">
+              <img src="/logo.svg" alt="TH Logo" className="navbar-logo" />
+            </div>
+            <ul className="nav-links">
             <li>
               <button className="nav-btn" onClick={() => goToSection("home")}>
                 Home
@@ -52,6 +56,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
+          </div>
         </nav>
       </div>
     </header>
