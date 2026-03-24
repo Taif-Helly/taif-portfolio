@@ -58,7 +58,7 @@ export const projectsData = [
         longDescription: "This project is a Scandinavian-inspired eCommerce concept for modern lamps, combining clean design with a realistic online shopping experience. My interest in lamps comes from a passion for interior design and how lighting can transform a space.",
         images: [firstImg],
         github: "https://github.com/Taif-Helly/lampor-hemsida-NordicEvee",
-        demo: "#",
+        demo: "https://lamps-nordicevee.netlify.app/",
         tags: ["HTML", "CSS", "eCommerce", "in progress"],
     },
 ];
