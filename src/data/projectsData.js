@@ -17,7 +17,7 @@ export const projectsData = [
         longDescription: "This project is a productivity tracking web application where users can manage events, create to-do lists, and track daily habits. It includes a simple login system using local storage and provides an organized interface to help users stay productive and manage their tasks efficiently.",
         images: [mainprod,loginprod ],
         github: "https://github.com/Taif-Helly/Productivity-Assistant-Application-",
-        demo: "#",
+        demo: "https://productivity-assistant-application.netlify.app/",
         tags: ["React", "HTML", "CSS", "JavaScript"],
     },
 
@@ -28,7 +28,7 @@ export const projectsData = [
         longDescription: "This project is a web application that fetches data from a Pokémon API to display information about different Pokémon, including their types, abilities, and strengths. The website allows users to explore and learn more about various Pokémon through dynamically loaded data and a simple, user friendly interface.",
         images: [mainpok,charizard ],
         github: "https://github.com/Taif-Helly/Pokemon-application",
-        demo: "#",
+        demo: "https://pokemon-application-api.netlify.app/",
         tags: ["React", "HTML", "CSS", "JavaScript"],
     },
      {
@@ -38,7 +38,7 @@ export const projectsData = [
         longDescription: "This blog page focuses on food and cooking, sharing recipes, tips, and inspiration for people who enjoy making and exploring different dishes. The page is designed with a clean and simple layout so readers can easily discover new recipes and learn more about food in an engaging way.",
         images: [mainblogg,webfunctions ],
         github: "https://github.com/Taif-Helly/Dynamisk-Bloggplattform-Tender-Bites",
-        demo: "#",
+        demo: "https://tender-bites.netlify.app/",
         tags: ["HTML", "CSS", "JavaScript Vanilla"],
     },
     {
