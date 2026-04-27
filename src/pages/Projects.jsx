@@ -21,7 +21,7 @@ export default function Projects() {
                     >
                         <motion.div
                             className="project-card"
-                            whileHover={{ y: -4 }}
+                            whileHover={{ y: -20 }}
                             transition={{ duration: 0.2 }}
                         >
                             <div className="project-image-wrapper">

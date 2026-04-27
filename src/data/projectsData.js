@@ -9,7 +9,21 @@ import mainpok from "../assets/ProjectsPictures/main-pokemon.PNG";
 import charizard from "../assets/ProjectsPictures/charizard.PNG";
 import mainprod from "../assets/ProjectsPictures/main-prod.PNG";
 import loginprod from "../assets/ProjectsPictures/log in-prod.PNG";
+import homepage from "../assets/ProjectsPictures/homepage.PNG";
+import booksession from "../assets/ProjectsPictures/booksession.PNG";
+import login from "../assets/ProjectsPictures/login.PNG";
 export const projectsData = [
+ {
+        id: 6,
+        title: "Find your recovery, book an event",
+        shortDescription: "Eventra, book curated wellness activities with expert trainers, in just a few clicks.",
+        longDescription: "Eventra is a wellness booking platform where you discover and reserve curated recovery activities, from gym sessions to relaxation events, led by expert trainers, with transparent pricing and availability at a glance.",
+        images: [homepage,booksession, login ],
+        github: "https://github.com/Taif-Helly/webbshop-2026-be",
+        demo: "https://avdrxxa.github.io/webbshop-2026-fe/",
+        tags: ["React", "HTML", "CSS", "JavaScript", "Auth", "Testing", "MongoDB", "Node.js"],
+    },
+
      {
         id: 5,
         title: "Productivity Assistant Application",
@@ -29,7 +43,7 @@ export const projectsData = [
         images: [mainpok,charizard ],
         github: "https://github.com/Taif-Helly/Pokemon-application",
         demo: "https://pokemon-application-api.netlify.app/",
-        tags: ["React", "HTML", "CSS", "JavaScript"],
+        tags: ["React", "HTML", "CSS", "JavaScript", "API fetch"],
     },
      {
         id: 3,
